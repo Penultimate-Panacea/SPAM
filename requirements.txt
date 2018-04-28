@@ -1,2 +1,3 @@
 Pyphen
 re
+numpy
