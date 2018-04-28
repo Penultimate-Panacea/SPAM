@@ -41,8 +41,7 @@ def classify_by_syl(syl_count):
     elif length == 6:
         form = "Sextain"
     elif (length == 13 or length == 14) and mean(syl_count) == 8:
-        form = "Formal Rondel"
-    elif 
+        form = "Formal French Rondel"
     else:
         form = "Open Form"
     return form
