@@ -16,19 +16,21 @@ def wordstress(word):
 
 def linestress(line):
     """Splits a line into words and creates a list of the stresses"""
-    from re import split
-    words = split(" ", line)
-    stresses = []
-    for i in words:
-        stresses.append(wordstress(i))
-    print(stresses)
-    stressl = []
-    for sublist in stresses:
-        for item in sublist:
-            stressl.append(item)
-    print(stressl)
-    return stressl
-
+    try:
+        from re import split
+        words = split(" ", line)
+        stresses = []
+        for i in words:
+            stresses.append(wordstress(i))
+        print(stresses)
+        stressl = []
+        for sublist in stresses:
+            for item in sublist:
+                stressl.append(item)
+        print(stressl)
+        return stressl
+    except:
+        quit(7)
 
 def classicalmeter(stressword):
     if len(stressword) == 1:
