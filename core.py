@@ -8,7 +8,7 @@ def count_syl(line):
     syllables = {}
     j = 0
     if line == '':
-        return 0
+        return -1
     else:
         for i in words:
             syllables[i] = len(split("-", dic.inserted(words[j])))

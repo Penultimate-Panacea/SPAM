@@ -12,22 +12,22 @@ Chance Operations [Uncertain how to detect]
 Cinquain
 Doha
 Dramatic Monologue [Uncertain how to detect]
-Ekphrastic
+Ekphrastic [Uncertain how to detect]
 Elegy
 Epic
 Epigram
 Epistle
-Erasure
-Found Poem
+Erasure [Uncertain how to detect]
+Found Poem [Uncertain how to detect]
 Ghazal
 Haiku
-Limerick
+Limerick 
 Ode
-Pantoum
+Pantoum 
 Prose Poem
 Renga
 Rondeau
-Sapphic
+Sapphic 
 Sestina
 Sonnet
 Tanka
