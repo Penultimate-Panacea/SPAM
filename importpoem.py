@@ -24,3 +24,22 @@ def poem_from_example(exampletype, includemeta=0):
         file.close()
         return poem, meta
     return poem
+
+
+def strip_punct(poem):
+    from re import split
+    from string import punctuation
+    strippedpoem = []
+    for line in poem:
+        words = []
+        words.append(split(" ", line))
+        strippedline = []
+        print(words)
+        for word in words[0]:
+            print(word)
+            #stripper = word.maketrans(punctuation, )
+          #FIXME  word.translate(word, None[, punctuation])
+        print(words)
+        print(line)
+
+    return strippedpoem
