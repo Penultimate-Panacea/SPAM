@@ -6,12 +6,13 @@ def poem_from_file(file_path):
     file.close()
     return poem
 
-def poem_from_example(type, includemeta = 0):
+
+def poem_from_example(type, includemeta=0):
     """Reads a poem from ExamplePoetry Directory"""
     poemfiles = {"cinquain": "ExamplePoetry/Cinquain.txt", "haiku": "ExamplePoetry/Haiku.txt", "nonet":
-            "ExamplePoetry/Nonet.txt"}
+        "ExamplePoetry/Nonet.txt"}
     metafiles = {"cinquain": "ExamplePoetry/Cinquain.meta", "haiku": "ExamplePoetry/Haiku.meta", "nonet":
-            "ExamplePoetry/Nonet.meta"}
+        "ExamplePoetry/Nonet.meta"}
     selection = type.lower()
     file = open(poemfiles[selection], 'r')
     poem = file.read().splitlines()
