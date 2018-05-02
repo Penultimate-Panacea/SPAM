@@ -26,11 +26,6 @@ def linestress(line):
             cleanstresses.append(cleanstress)
         tuple(cleanstresses)
         stresses.append(cleanstresses)
-
-    stressl = []
-    for sublist in stresses:
-        for item in sublist:
-            stressl.append(item)
     return stresses
 
 
