@@ -30,6 +30,7 @@ def linestress(line):
 
 
 def classicalmeter(stressword):
+    """DEPRECIATED: NOT ACCURATE METER"""
     if len(stressword) == 1:
         foot = "none"
         return foot
