@@ -2,6 +2,6 @@ Pyphen
 re
 numpy
 pronouncing
-#tdqm
+tqdm
 nltk
 pytest
