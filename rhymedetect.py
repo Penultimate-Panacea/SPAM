@@ -1,5 +1,4 @@
 # encoding='utf-8'
-"""Detects if two words count as rhyming"""
 
 
 def twowordperfect(word1, word2):
