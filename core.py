@@ -2,8 +2,10 @@
 import importpoem
 import footdetect
 from tqdm import tqdm
-poem = importpoem.poem_from_example("shakesonnet")
-#poem = importpoem.strip_punct(poem)
+rawpoem = importpoem.poem_from_example("shakesonnet")
+print(rawpoem)
+poem = importpoem.strip_punct(rawpoem)
+print(poem)
 meter = []
 for line in tqdm(poem):
     linestresses = []
