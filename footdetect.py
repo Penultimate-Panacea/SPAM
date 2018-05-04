@@ -1,10 +1,7 @@
 # encoding='utf-8'
-def wordstress(word):
+def wordstress(word, pro_dict):
     """Detects if syllables in a word are stressed, returns list of integers where 0 is unstressed and 1 is stressed"""
-    # TODO: This is super slow, needs optimized
-    from nltk.corpus import cmudict
     word = word.lower()
-    pro_dict = cmudict.dict()
     try:
         pro = pro_dict[word][0]  # TODO: add support for multiple pronouciation
         return tuple(i[-1] for i in pro if i[-1].isdigit())  # Not sure what this does, but it makes it work
@@ -13,13 +10,13 @@ def wordstress(word):
         quit(3)
 
 
-def linestress(line):
+def linestress(line,pro_dict):
     """Splits a line into words and creates a list of the stresses"""
     from re import split, sub
     words = split(" ", line)
     stresses = []
     for i in words:  # tuple to list
-        rawstresses = wordstress(i)
+        rawstresses = wordstress(i, pro_dict)
         list(rawstresses)
         cleanstresses = []
         for j in rawstresses:
