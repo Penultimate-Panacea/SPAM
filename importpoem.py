@@ -32,12 +32,11 @@ def strip_punct(poem):
     strippedpoem = []
     for line in poem:
         words = []
-        words.append(split(" ", line))
+        words.append(split(' ', line))
         strippedlinelist = []
-        #print(words)
         for word in words[0]:
             stripper = str.maketrans(dict.fromkeys(punctuation))
             strippedlinelist.append(word.translate(stripper))
-            strippedline =' '.join(strippedlinelist)
+            strippedline = ' '.join(strippedlinelist)
         strippedpoem.append(strippedline)
     return strippedpoem
