@@ -1,9 +1,26 @@
-def poem_from_file(file_path):
+def poem_from_file_path(file_path, includemeta=0):
     """Reads a poem from a file into the program """
-    file = open(file_path, 'r')
-    poem = file.read().splitlines()
-    file.close()
-    return poem
+    from re import match
+    file_path = file_path.lower()
+    file_extension = match("\.(.*)", file_path)
+    if file_extension == ".poem":
+        file = open(file_path, 'r')
+        contents = file.read().splitlines()
+        file.close()
+        if includemeta == 1:
+            meta = contents[0:3]
+            poem = contents[3:]
+            return poem, meta
+        else:
+            return contents[3:]
+    elif file_extension == ".txt":
+        file = open(file_path, 'r')
+        poem = file.read().splitlines()
+        file.close()
+        return poem
+    else:
+        print("That file type is not supported at the moment")
+        quit(4)
 
 
 def poem_from_example(exampletype, includemeta=0):
