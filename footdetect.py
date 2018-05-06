@@ -63,12 +63,3 @@ def classicalclassify(block, number):
     else:
         print("Invalid Input to the classicalmeter function")
         quit(6)
-
-
-def temp_test():
-    print(linestress("Two households both alike in dignity"))
-    for word in linestress("Two households both alike in dignity"):
-        print(classicalclassify(word))
-
-
-
