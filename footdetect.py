@@ -10,7 +10,7 @@ def wordstress(word, pro_dict):
         quit(3)
 
 
-def linestress(line,pro_dict):
+def linestress(line, pro_dict):
     """Splits a line into words and creates a list of the stresses"""
     from re import split, sub
     words = split(" ", line)
@@ -30,6 +30,7 @@ def linestress(line,pro_dict):
 def makeblocks(line):
     """Determines the number of feet in a line and passes it to classicalmeter()"""
     pass
+
 
 def classicalclassify(block, number):
     """classifies a tuple of stresses as """

@@ -48,8 +48,7 @@ def strip_punct(poem):
     from string import punctuation
     strippedpoem = []
     for line in poem:
-        words = []
-        words.append(split(' ', line))
+        words = [split(' ', line)]
         strippedlinelist = []
         for word in words[0]:
             stripper = str.maketrans(dict.fromkeys(punctuation))

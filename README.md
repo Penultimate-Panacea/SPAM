@@ -12,5 +12,5 @@ Spontaneous Poetry Analysis Machine
 #### Planned Scope
 * Display poems in a GUI with highlighting options
 * Integral Rhyming Dictionary
-* Theme Identfication
+* Theme Identification
 
