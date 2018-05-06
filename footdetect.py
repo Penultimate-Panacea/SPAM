@@ -28,10 +28,10 @@ def linestress(line,pro_dict):
 
 
 def makeblocks(line):
-    """Determines the number of feet and passes it to classicalmeter()"""
+    """Determines the number of feet in a line and passes it to classicalmeter()"""
     pass
 
-def classicalclassify(block):
+def classicalclassify(block, number):
     """classifies a tuple of stresses as """
     if len(block) == 1:
         foot = "none"

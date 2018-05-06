@@ -9,11 +9,11 @@ def poem_from_file(file_path):
 def poem_from_example(exampletype, includemeta=0):
     """Reads a poem from ExamplePoetry Directory"""
     poemfiles = {"cinquain": "ExamplePoetry/Cinquain.txt", "haiku": "ExamplePoetry/Haiku.txt", "nonet":
-        "ExamplePoetry/Nonet.txt", "italysonnet": "ExamplePoetry/SonnetItaly.txt", "shakesonnet":
-        "ExamplePoetry/SonnetShake.txt"}
+                 "ExamplePoetry/Nonet.txt", "italysonnet": "ExamplePoetry/SonnetItaly.txt", "shakesonnet":
+                 "ExamplePoetry/SonnetShake.txt"}
     metafiles = {"cinquain": "ExamplePoetry/Cinquain.meta", "haiku": "ExamplePoetry/Haiku.meta", "nonet":
-        "ExamplePoetry/Nonet.meta", "italysonnet": "ExamplePoetry/SonnetItaly.meta", "shakesonnet":
-        "ExamplePoetry/SonnetShake.meta"}
+                 "ExamplePoetry/Nonet.meta", "italysonnet": "ExamplePoetry/SonnetItaly.meta", "shakesonnet":
+                 "ExamplePoetry/SonnetShake.meta"}
     selection = exampletype.lower()
     file = open(poemfiles[selection], 'r')
     poem = file.read().splitlines()
