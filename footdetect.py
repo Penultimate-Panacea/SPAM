@@ -4,7 +4,7 @@ def wordstress(word, pro_dict):
     word = word.lower()
     try:
         pro = pro_dict[word][0]  # TODO: add support for multiple pronouciation
-        return tuple(i[-1] for i in pro if i[-1].isdigit())  # Not sure what this does, but it makes it work
+        return tuple(i[-1] for i in pro if i[-1].isdigit())
     except KeyError:
         print("The word:", word, "does not exist in the current dictionary")
         quit(3)
@@ -20,7 +20,7 @@ def linestress(line, pro_dict):
         list(rawstresses)
         cleanstresses = []
         for j in rawstresses:
-            cleanstress = sub('2', '1', j)
+            cleanstress = sub('[23]', '1', j)
             cleanstresses.append(cleanstress)
         tuple(cleanstresses)
         stresses.append(cleanstresses)  # and back again
@@ -28,12 +28,14 @@ def linestress(line, pro_dict):
 
 
 def makeblocks(line):
-    """Determines the number of feet in a line and passes it to classicalmeter()"""
-    pass
+    """
+    Determines the number of feet in a line and passes it to classicalclassify()
+    Current Source: https://arxiv.org/ftp/arxiv/papers/1004/1004.3262.pdf
+    """
 
 
-def classicalclassify(block, number):
-    """classifies a tuple of stresses as """
+def classicalclassify(block):
+    """classifies a tuple of stresses as an individual foot"""
     if len(block) == 1:
         foot = "none"
         return foot
@@ -58,7 +60,7 @@ def classicalclassify(block, number):
         foot = feet[tuple(block)]
         return foot
     elif len(block) > 4:
-        print("Word Length is not yet supported")
+        print("Block Length is not yet supported")
         print(block)
         quit(4)
     else:

@@ -5,7 +5,7 @@ from tqdm import tqdm
 import footdetect
 import importpoem
 
-rawpoem = importpoem.poem_from_example("Haiku")
+rawpoem = importpoem.poem_from_file_path("This.poem")
 poem = importpoem.strip_punct(rawpoem)
 print(poem, "\n")
 meter = []
