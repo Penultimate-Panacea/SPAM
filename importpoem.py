@@ -1,23 +1,17 @@
-def poem_from_file_path(file_path, includemeta=0):
+# encoding='utf-8'
+def poem_from_file_path(file_path):
     """Reads a poem from a file into the program """
     from re import match
     file_path = file_path.lower()
+    print(file_path)
     file_extension = match("\.(.*)", file_path)
+    print(file_extension)
     if file_extension == ".poem":
-        file = open(file_path, 'r')
-        contents = file.read().splitlines()
-        file.close()
-        if includemeta == 1:
-            meta = contents[0:3]
-            poem = contents[3:]
-            return poem, meta
-        else:
-            return contents[3:]
+        result = poem_from_poem(file_path)
+        return result
     elif file_extension == ".txt":
-        file = open(file_path, 'r')
-        poem = file.read().splitlines()
-        file.close()
-        return poem
+        result = poem_from_text(file_path)
+        return result
     else:
         print("That file type is not supported at the moment")
         quit(4)
@@ -43,7 +37,37 @@ def poem_from_example(exampletype, includemeta=0):
     return poem
 
 
+def poem_from_poem(file_path, includemeta=0):
+    """Reads custom .poem file"""
+    file = open(file_path, 'r')
+    contents = file.read().splitlines()
+    file.close()
+    if includemeta == 1:
+        meta = contents[0:3]
+        poem = contents[3:]
+        return poem, meta
+    else:
+        return contents[3:]
+
+
+def poem_from_text(file_path, includemeta=0):
+    if includemeta == 1:
+        file = open(file_path, 'r')
+        poem = file.read().splitlines()
+        file.close()
+        meta_path = input("Please specify path to .meta file, if no meta dat file exists.")
+        meta = open(meta_path, 'r')
+        metadata = meta.read().splitlines()
+        meta.close()
+        return poem, metadata
+    else:
+        file = open(file_path, 'r')
+        poem = file.read().splitlines()
+        file.close()
+        return poem
+
 def strip_punct(poem):
+    """Removes all punctuation marks from poem"""
     from re import split
     from string import punctuation
     strippedpoem = []
