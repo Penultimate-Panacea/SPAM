@@ -36,6 +36,11 @@ def makeblocks(line):
 
 def classicalclassify(block):
     """classifies a tuple of stresses as an individual foot"""
+    try:
+        block = tuple(block)
+    except:
+        print("Block is not of proper type")
+        quit()
     if len(block) == 1:
         foot = "none"
         return foot
@@ -59,10 +64,7 @@ def classicalclassify(block):
                     "dispondee"}
         foot = feet[tuple(block)]
         return foot
-    elif len(block) > 4:
-        print("Block Length is not yet supported")
-        print(block)
-        quit(4)
+    elif (len(block) > 4 or len(block) == 0):
+        raise Exception("Invalid Block Length")
     else:
-        print("Invalid Input to the classicalmeter function")
-        quit(6)
+        raise Exception("Error ")
